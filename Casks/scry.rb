@@ -4,12 +4,15 @@ cask "scry" do
 
   url "https://github.com/stefanlegg/scry/releases/download/v#{version}/Scry-macOS.zip"
   name "Scry"
-  desc "Menu bar app showing running dev servers at a glance"
+  desc "Dev server detective — menu bar app, CLI, and MCP server"
   homepage "https://github.com/stefanlegg/scry"
 
   depends_on macos: ">= :ventura"
 
   app "Scry.app"
+
+  binary "#{appdir}/Scry.app/Contents/MacOS/scry"
+  binary "#{appdir}/Scry.app/Contents/MacOS/scry-mcp"
 
   zap trash: [
     "~/Library/Preferences/com.stefanlegg.Scry.plist",
